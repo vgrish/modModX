@@ -30,6 +30,10 @@ function run()
 		exit();
 	}
 
+	if (!class_exists('modModX')) {
+		return;
+	}
+
 	/* start output buffering */
 	ob_start();
 
