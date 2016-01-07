@@ -15,8 +15,8 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 		if (strpos($indexContent, 'modmodxindex') === false) {
 			fseek($indexHandle, 0);
 			$success = fwrite($indexHandle, preg_replace("#[\r\t]+#is", '', '<?php
-					if (@file_exists($_SERVER["DOCUMENT_ROOT"] . "/modmodxindex.php")) {
-						@include_once($_SERVER["DOCUMENT_ROOT"] . "/modmodxindex.php");
+					if (@file_exists(dirname(__FILE__) . "/modmodxindex.php")) {
+						@include_once(dirname(__FILE__) . "/modmodxindex.php");
 						run();
 					}
 					') . $indexContent);
